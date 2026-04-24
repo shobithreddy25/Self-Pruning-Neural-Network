@@ -13,21 +13,21 @@ This project was implemented as part of an **AI Engineering case study**, demons
 
 ## Key Idea
 
-Each weight ( w_{ij} ) in a neural network is associated with a learnable gate value:
+Each weight ( w{ij} ) in a neural network is associated with a learnable gate value:
 
 [
-g_{ij} = \sigma(s_{ij})
+g_{ij} = sigma(s_{ij})
 ]
 
 where:
 
 * ( s_{ij} ) = gate score (trainable parameter)
-* ( \sigma ) = sigmoid function
+* ( sigma ) = sigmoid function
 
 The effective weight used during forward propagation becomes:
 
 [
-\tilde{w}*{ij} = w*{ij} \times g_{ij}
+tilde{w}*{ij} = w*{ij} * g_{ij}
 ]
 
 If ( g_{ij} \approx 0 ), the connection is effectively **pruned**.
@@ -39,7 +39,7 @@ If ( g_{ij} \approx 0 ), the connection is effectively **pruned**.
 The training objective combines classification accuracy with sparsity regularization:
 
 [
-\text{Total Loss} = \text{CrossEntropyLoss} + \lambda \times \text{SparsityLoss}
+{Total Loss} = {CrossEntropyLoss} + lambda * {SparsityLoss}
 ]
 
 Where:
